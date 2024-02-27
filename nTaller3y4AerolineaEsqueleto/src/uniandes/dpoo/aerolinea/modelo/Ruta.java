@@ -9,16 +9,16 @@ public class Ruta
 	private String horaSalida;
 	private String horaLlegada;
 	private String codigoRuta;
-	
-
-
     public Ruta(Aeropuerto origen,Aeropuerto destino,String horaSalida, String horaLlegada, String codigoRuta) {
 		super();
 		this.horaSalida = horaSalida;
 		this.horaLlegada = horaLlegada;
 		this.codigoRuta = codigoRuta;
 	}
-
+    public String getCodigoRuta() {
+    	return codigoRuta;
+    }
+    
 	/**
      * Dada una cadena con una hora y minutos, retorna los minutos.
      * 
@@ -45,10 +45,6 @@ public class Ruta
         return horas;
     }
 
-	public String getCodigoRuta() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
     
 }

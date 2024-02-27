@@ -7,4 +7,9 @@ public class Cliente {
 		return null;
 	}
 
+	public String getNombre() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
