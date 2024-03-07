@@ -85,7 +85,7 @@ public class PersistenciaTiquetesJson implements IPersistenciaTiquetes
         {
             JSONObject cliente = jClientes.getJSONObject( i );
             String tipoCliente = cliente.getString( TIPO_CLIENTE );
-            Cliente nuevoCliente = null;
+            ClienteNatural nuevoCliente = null;
             // En las siguientes líneas se utilizan dos estrategias para implementar la carga de objetos: en la primera estrategia, la carga de los objetos
             // lo hace alguien externo al objeto que se carga; en la segunda estrategia, los objetos saben cargarse.
             // En general es una mala idea mezclar las dos estrategias: acá lo hacemos para ilustrar las dos posibilidades y mostrar las ventajas y desventajas de cada una.
@@ -205,11 +205,11 @@ public class PersistenciaTiquetesJson implements IPersistenciaTiquetes
         {
             JSONObject jTiquete = new JSONObject( );
             jTiquete.put( CODIGO_TIQUETE, tiquete.getCodigo( ) );
-            jTiquete.put( CODIGO_RUTA, tiquete.getVuelo( ).getRuta( ).getCodigoRuta( ) );
-            jTiquete.put( FECHA, tiquete.getVuelo( ).getFecha( ) );
+            jTiquete.put( CODIGO_RUTA, ((Vuelo) tiquete.getVuelo( )).getRuta( ).getCodigoRuta( ) );
+            jTiquete.put( FECHA, ((Vuelo) tiquete.getVuelo( )).getFecha( ) );
             jTiquete.put( TARIFA, tiquete.getTarifa( ) );
             jTiquete.put( USADO, tiquete.esUsado( ) );
-            jTiquete.put( CLIENTE, tiquete.getCliente( ).getIdentificador( ) );
+            jTiquete.put( CLIENTE, ((Cliente) tiquete.getCliente( )).getIdentificador( ) );
 
             jTiquetes.put( jTiquete );
         }

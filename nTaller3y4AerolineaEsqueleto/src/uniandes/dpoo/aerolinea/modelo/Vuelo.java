@@ -43,6 +43,11 @@ public class Vuelo {
 		return 0;
 	}
 
+	public void setRealizado(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
  
 	
 

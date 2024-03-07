@@ -12,6 +12,7 @@ import java.util.Map;
 import uniandes.dpoo.aerolinea.exceptions.InformacionInconsistenteException;
 import uniandes.dpoo.aerolinea.exceptions.VueloSobrevendidoException;
 import uniandes.dpoo.aerolinea.modelo.cliente.Cliente;
+import uniandes.dpoo.aerolinea.modelo.cliente.ClienteNatural;
 import uniandes.dpoo.aerolinea.persistencia.CentralPersistencia;
 import uniandes.dpoo.aerolinea.persistencia.IPersistenciaAerolinea;
 import uniandes.dpoo.aerolinea.persistencia.IPersistenciaTiquetes;
@@ -93,11 +94,11 @@ public class Aerolinea
 
     /**
      * Agrega un nuevo cliente a la aerolínea
-     * @param cliente
+     * @param nuevoCliente
      */
-    public void agregarCliente( Cliente cliente )
+    public void agregarCliente( Cliente nuevoCliente )
     {
-        this.clientes.put( cliente.getIdentificador( ), cliente );
+        this.clientes.put( nuevoCliente.getIdentificador( ), nuevoCliente );
     }
 
     /**
